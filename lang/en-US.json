@@ -1,0 +1,10 @@
+{
+  "layouts": {
+    "title": "Chack-check"
+  },
+
+  "buttons": {
+    "sign-in": "Sign-in",
+    "sign-up": "Sign-up"
+  }
+}
