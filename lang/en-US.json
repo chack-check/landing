@@ -5,6 +5,12 @@
 
   "buttons": {
     "sign-in": "Sign-in",
-    "sign-up": "Sign-up"
+    "sign-up": "Sign-up",
+    "learn-more": "Learn more"
+  },
+
+  "content": {
+    "title-text": "Discover a new dimension of communication with our app that embodies advanced features and a smart AI assistant. Make your conversations more efficient and productive with advanced features that turn ordinary chat into a unique experience.",
+    "second-title": "Our benefits cover the capabilities of several applications at once"
   }
 }

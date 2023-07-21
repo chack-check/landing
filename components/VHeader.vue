@@ -9,8 +9,8 @@ const isDark = useDark({
 </script>
 
 <template>
-  <header class="w-full p-6 fixed top-0 left-0">
-    <div class="flex justify-between items-center max-w-screen-lg mx-auto">
+  <header class="header w-full fixed top-0 left-0">
+    <div class="flex justify-between items-center max-w-screen-lg mx-auto backdrop-blur-sm p-3 sm:p-6">
       <ClientOnly>
         <el-switch
           v-model="isDark"
@@ -37,3 +37,9 @@ const isDark = useDark({
     </div>
   </header>
 </template>
+
+<style>
+.header {
+  block-size: var(--h-header);
+}
+</style>

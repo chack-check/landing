@@ -26,11 +26,12 @@ export default defineNuxtConfig({
     'nuxt-icons',
     '@nuxtjs/tailwindcss',
     '@element-plus/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-icons'
   ],
   googleFonts: {
     families: {
-      Inter: true
+      Inter: [400, 500, 600, 700, 800]
     },
     display: 'swap',
     preload: true,
@@ -38,8 +39,15 @@ export default defineNuxtConfig({
   },
   postcss: {
     plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': 'postcss-nesting',
       tailwindcss: {},
-      autoprefixer: {}
+      'postcss-preset-env': {
+        features: { 'nesting-rules': false }
+      },
+      'postcss-pxtorem': {
+        propList: ['font', 'font-size', 'line-height', 'letter-spacing', 'inline-size', 'block-size']
+      }
     }
   },
   i18n: {

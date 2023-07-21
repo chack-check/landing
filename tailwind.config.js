@@ -2,7 +2,7 @@
 
 const { pxToRemPair: pxToRemPairHelper } = require('@captaincss/captaincss/helpers')
 
-const baseFontSize = 18
+const baseFontSize = 16
 const pxToRemPair = (px) => {
   return pxToRemPairHelper(px, baseFontSize)
 }
@@ -21,10 +21,17 @@ module.exports = {
     extend: {
       colors: {
         black: 'lab(8 -1 -2)',
+        black600: 'lab(8 -1 -2 / .6)',
         gray: 'lab(90 -2 -5)',
         gray800: 'lab(13 -0 0)',
+        gray700: 'lab(68 -3 -7)',
+        darkGray: 'lab(16 -1 -3)',
         violet: 'lab(47 38 -82)',
         white: 'lab(100 -0 0)'
+      },
+      padding: {
+        'header-b-size-desktop': '88px',
+        'header-b-size-mobile': '64px'
       }
     },
 
@@ -33,7 +40,11 @@ module.exports = {
       ...pxToRemPair(14),
       ...pxToRemPair(16),
       ...pxToRemPair(18),
-      ...pxToRemPair(22)
+      ...pxToRemPair(20),
+      ...pxToRemPair(22),
+      ...pxToRemPair(32),
+      ...pxToRemPair(42),
+      ...pxToRemPair(52)
     }
   },
   plugins: []
