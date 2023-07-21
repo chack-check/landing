@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
-const { pxToRemPair: pxToRemPairHelper } = require('@captaincss/captaincss/helpers');
+const { pxToRemPair: pxToRemPairHelper } = require('@captaincss/captaincss/helpers')
 
-const baseFontSize = 18;
+const baseFontSize = 18
 const pxToRemPair = (px) => {
-  return pxToRemPairHelper(px, baseFontSize);
-};
+  return pxToRemPairHelper(px, baseFontSize)
+}
 
 module.exports = {
   darkMode: 'class',
@@ -33,7 +33,7 @@ module.exports = {
       ...pxToRemPair(14),
       ...pxToRemPair(16),
       ...pxToRemPair(18),
-      ...pxToRemPair(22),
+      ...pxToRemPair(22)
     }
   },
   plugins: []

@@ -1,9 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import svgLoader from 'vite-svg-loader'
 
 const BASE_URL = process.env.NUXT_BASE_URL
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: [
+    'assets/css/main.css'
+  ],
+  vite: {
+    plugins: [svgLoader()]
+  },
   app: {
     head: {
       link: [
@@ -58,5 +65,10 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_language',
       alwaysRedirect: true
     }
+  },
+  imports: {
+    dirs: [
+      'utils/**'
+    ]
   }
 })
