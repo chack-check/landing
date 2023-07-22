@@ -12,6 +12,7 @@ const props = defineProps<Props>()
   <article class="flex flex-col items-center text-center">
     <figure class="bg-violet p-6 sm:p-7 rounded-full mb-4">
       <nuxt-icon
+        class="card-icon"
         :name="props.icon"
         filled
       />
@@ -26,3 +27,15 @@ const props = defineProps<Props>()
     </p>
   </article>
 </template>
+
+<style lang="postcss" scoped>
+:deep(.card-icon.nuxt-icon) svg {
+  inline-size: 18px;
+  block-size: 18px;
+
+  @media (width > 640px) {
+    inline-size: 20px;
+    block-size: 20px;
+  }
+}
+</style>
