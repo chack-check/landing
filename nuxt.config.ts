@@ -27,7 +27,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@element-plus/nuxt',
     '@vueuse/nuxt',
-    'nuxt-icons'
+    'nuxt-icons',
+    '@nuxt/content',
+    'nuxt-swiper',
+    'nuxt-lodash'
   ],
   googleFonts: {
     families: {

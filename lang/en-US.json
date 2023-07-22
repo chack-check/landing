@@ -6,11 +6,13 @@
   "buttons": {
     "sign-in": "Sign-in",
     "sign-up": "Sign-up",
-    "learn-more": "Learn more"
+    "learn-more": "Learn more",
+    "accept": "Accept",
+    "decline": "Decline"
   },
 
-  "content": {
-    "title-text": "Discover a new dimension of communication with our app that embodies advanced features and a smart AI assistant. Make your conversations more efficient and productive with advanced features that turn ordinary chat into a unique experience.",
-    "second-title": "Our benefits cover the capabilities of several applications at once"
+  "cookie-modal": {
+    "title": "We use your cookies to improve our app",
+    "description": "We use these cookies to collect information about how you use our site, monitor site performance, and improve our site performance, our services, and your experience."
   }
 }

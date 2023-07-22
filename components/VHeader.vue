@@ -1,16 +1,24 @@
 <script setup lang="ts">
-import MoonIcon from 'assets/icons/moon-icon.svg?component'
-import SunIcon from 'assets/icons/sun-icon.svg?component'
+import MoonIcon from 'assets/icons/moon.svg?component'
+import SunIcon from 'assets/icons/sun.svg?component'
 
 const isDark = useDark({
   // @ts-ignore
   disableTransition: false
 })
+
+const { y } = useWindowScroll()
+const { height } = useWindowSize()
+
+const headerBackdropBlur = computed(() => y.value > height.value / 6)
 </script>
 
 <template>
   <header class="header w-full fixed top-0 left-0">
-    <div class="flex justify-between items-center max-w-screen-lg mx-auto backdrop-blur-sm p-3 sm:p-6">
+    <div
+      class="flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition"
+      :class="{'backdrop-blur-sm': headerBackdropBlur}"
+    >
       <ClientOnly>
         <el-switch
           v-model="isDark"

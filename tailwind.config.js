@@ -26,8 +26,11 @@ module.exports = {
         gray800: 'lab(13 -0 0)',
         gray700: 'lab(68 -3 -7)',
         darkGray: 'lab(16 -1 -3)',
+        darkGray800: 'lab(16 -1 -10)',
         violet: 'lab(47 38 -82)',
-        white: 'lab(100 -0 0)'
+        white: 'lab(100 -0 0)',
+        lightGreen: 'lab(93 -21 11)',
+        green: 'lab(60 -42 20)'
       },
       padding: {
         'header-b-size-desktop': '88px',
@@ -42,6 +45,7 @@ module.exports = {
       ...pxToRemPair(18),
       ...pxToRemPair(20),
       ...pxToRemPair(22),
+      ...pxToRemPair(24),
       ...pxToRemPair(32),
       ...pxToRemPair(42),
       ...pxToRemPair(52)
