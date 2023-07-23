@@ -24,7 +24,7 @@ const controlledSwiperGuides = ref()
 </script>
 
 <template>
-  <main class="main h-full min-h-screen bg-gray dark:bg-black transition pt-header-b-size-mobile sm:header-b-size-desktop px-4">
+  <main class="main h-full min-h-screen pt-header-b-size-mobile sm:header-b-size-desktop px-4">
     <div class="max-w-screen-lg mx-auto">
       <div class="pt-24 mx-auto flex flex-col items-center">
         <section class="flex flex-row items-center flex-wrap justify-center mb-4">
@@ -175,6 +175,8 @@ const controlledSwiperGuides = ref()
           </SwiperSlide>
         </Swiper>
       </section>
+
+      <el-divider class="el-plus page-divider !mb-8" />
     </div>
 
     <client-only>

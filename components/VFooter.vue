@@ -1,0 +1,17 @@
+<script setup lang="ts"></script>
+
+<template>
+  <footer class="px-4">
+    <div class="bg-violet grid grid-cols-1 sm:grid-cols-2 rounded-[10px] px-8 sm:px-12 py-10 sm:py-16 max-w-screen-lg mx-auto">
+      <section>
+        <h2 class="text-20 sm:text-32 font-bold text-white mb-2">
+          {{ $t("footer.title") }}
+        </h2>
+
+        <p class="text-16 sm:text-18 text-violet800">
+          {{ $t("footer.subtitle") }}
+        </p>
+      </section>
+    </div>
+  </footer>
+</template>

@@ -14,5 +14,10 @@
   "cookie-modal": {
     "title": "We use your cookies to improve our app",
     "description": "We use these cookies to collect information about how you use our site, monitor site performance, and improve our site performance, our services, and your experience."
+  },
+
+  "footer": {
+    "title": "Stay in the loop",
+    "subtitle": "Join our mailing list and watch for updates."
   }
 }

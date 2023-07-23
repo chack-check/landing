@@ -4,7 +4,7 @@ interface Props {
   title: string;
   description: string;
   sublist: Array<{ id: number, title: string }>
-  reverse: boolean;
+  reverse?: boolean;
 }
 
 const props = defineProps<Props>()

@@ -34,6 +34,7 @@ module.exports = {
         darkGray: 'lab(16 -1 -3)',
         darkGray800: 'lab(16 -1 -10)',
         violet: 'lab(47 38 -82)',
+        violet800: 'lab(90 5 -14)',
         white: 'lab(100 -0 0)',
         lightGreen: 'lab(93 -21 11)',
         green: 'lab(60 -42 20)'

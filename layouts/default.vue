@@ -39,9 +39,11 @@ const title = computed(() => t('layouts.title'))
           />
         </template>
       </Head>
-      <Body>
+      <Body class="bg-gray dark:bg-black transition">
         <VHeader />
         <slot />
+
+        <VFooter class="mb-8" />
       </Body>
     </Html>
   </div>
