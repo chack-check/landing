@@ -19,7 +19,8 @@ const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const greaterOrEqualSm = breakpoints.greaterOrEqual('sm')
 
-const controlledSwiper = ref()
+const controlledSwiperFeatures = ref()
+const controlledSwiperGuides = ref()
 </script>
 
 <template>
@@ -54,8 +55,10 @@ const controlledSwiper = ref()
         </h2>
 
         <el-button
-          class="mb-10"
+          v-scroll="{ id: 'features', offset: 90 }"
+          class="el-plus btn base-font mb-10 !px-4 sm:!px-6 !h-10 sm:!h-12"
           :color="COLORS.GRAY_500"
+          tag="a"
           size="large"
         >
           {{ $t("buttons.learn-more") }}
@@ -65,7 +68,10 @@ const controlledSwiper = ref()
       <div class="w-full max-w-screen-lg transition bg-white dark:bg-darkGray aspect-video mx-auto rounded-lg mb-20" />
 
       <section class="flex flex-col items-center">
-        <h3 class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5">
+        <h3
+          id="features"
+          class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5"
+        >
           {{ content?.features_screen?.title }}
         </h3>
 
@@ -86,19 +92,19 @@ const controlledSwiper = ref()
           class="max-w-screen-sm w-full"
           :slides-per-view="1"
           :loop="true"
-          @swiper="swiper => controlledSwiper = swiper"
+          @swiper="swiper => controlledSwiperFeatures = swiper"
         >
           <template #container-start>
             <div class="flex justify-end mb-2">
               <el-button
                 :icon="ArrowLeftBold"
                 :color="COLORS.PURPLE"
-                @click="controlledSwiper?.slidePrev()"
+                @click="controlledSwiperFeatures?.slidePrev()"
               />
               <el-button
                 :icon="ArrowRightBold"
                 :color="COLORS.PURPLE"
-                @click="controlledSwiper?.slideNext()"
+                @click="controlledSwiperFeatures?.slideNext()"
               />
             </div>
           </template>
@@ -127,6 +133,47 @@ const controlledSwiper = ref()
         <h3 class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5">
           {{ content?.guide_screen?.title }}
         </h3>
+
+        <div v-show="greaterOrEqualSm" class="grid grid-cols-1 gap-20">
+          <v-guide-item
+            v-for="guide of content?.guide_screen.list"
+            :key="guide.id"
+            v-bind="guide"
+            :reverse="(guide.id) % 2 === 0"
+          />
+        </div>
+
+        <Swiper
+          v-show="!greaterOrEqualSm"
+          :modules="[SwiperController]"
+          class="max-w-screen-sm w-full"
+          auto-height
+          :slides-per-view="1"
+          :loop="true"
+          @swiper="swiper => controlledSwiperGuides = swiper"
+        >
+          <template #container-start>
+            <div class="flex justify-end mb-2">
+              <el-button
+                :icon="ArrowLeftBold"
+                :color="COLORS.PURPLE"
+                @click="controlledSwiperGuides?.slidePrev()"
+              />
+              <el-button
+                :icon="ArrowRightBold"
+                :color="COLORS.PURPLE"
+                @click="controlledSwiperGuides?.slideNext()"
+              />
+            </div>
+          </template>
+
+          <SwiperSlide
+            v-for="guide of content?.guide_screen.list"
+            :key="guide.id"
+          >
+            <v-guide-item v-bind="guide" class="mx-2" />
+          </SwiperSlide>
+        </Swiper>
       </section>
     </div>
 

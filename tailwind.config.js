@@ -18,6 +18,11 @@ module.exports = {
     './app.vue'
   ],
   theme: {
+    fontFamily: {
+      Inter: ['Inter', 'ui-serif'],
+      AD: ['Architects Daughter', 'ui-serif'],
+    },
+
     extend: {
       colors: {
         black: 'lab(8 -1 -2)',
@@ -25,6 +30,7 @@ module.exports = {
         gray: 'lab(90 -2 -5)',
         gray800: 'lab(13 -0 0)',
         gray700: 'lab(68 -3 -7)',
+        'gray700-600': 'lab(68 -3 -7 / .6)',
         darkGray: 'lab(16 -1 -3)',
         darkGray800: 'lab(16 -1 -10)',
         violet: 'lab(47 38 -82)',

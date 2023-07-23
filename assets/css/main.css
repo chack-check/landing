@@ -52,6 +52,23 @@
         --el-button-active-color: var(--c-violet-600);
       }
     }
+
+    &.base-font {
+      --el-font-size-base: 14px;
+
+      @media (width >= 640px) {
+        --el-font-size-base: 16px;
+      }
+    }
+
+    &.base-padding {
+      block-size: auto !important;
+      padding: 8px 16px !important;
+
+      @media (width >= 640px) {
+        padding: 10px 18px !important;
+      }
+    }
   }
 
   &.theme-switcher {

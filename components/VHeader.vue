@@ -14,7 +14,7 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
 </script>
 
 <template>
-  <header class="header w-full fixed top-0 left-0">
+  <header class="header w-full fixed top-0 left-0 z-[100]">
     <div
       class="flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition"
       :class="{'backdrop-blur-sm': headerBackdropBlur}"
@@ -33,12 +33,15 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
       <div>
         <el-button
           link
-          class="el-plus btn link purple"
+          class="el-plus btn link purple base-font base-padding"
         >
           {{ $t("buttons.sign-in") }}
         </el-button>
 
-        <el-button :color="COLORS.PURPLE">
+        <el-button
+          :color="COLORS.PURPLE"
+          class="el-plus btn base-font base-padding"
+        >
           {{ $t("buttons.sign-up") }}
         </el-button>
       </div>
