@@ -187,7 +187,7 @@ const controlledSwiperGuides = ref()
 
 <style scoped>
 .main {
-  background-image: url('images/wave-left.svg'), url('images/wave-right.svg'), url('images/wave-top.svg');
+  background-image: url('assets/images/wave-left.svg'), url('assets/images/wave-right.svg'), url('assets/images/wave-top.svg');
   background-repeat: no-repeat;
   background-size: 15%, 15%, 70%;
   background-position: left top, right top, center top;

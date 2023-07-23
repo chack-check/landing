@@ -6,7 +6,8 @@ const BASE_URL = process.env.NUXT_BASE_URL
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
-    'assets/css/main.css'
+    'assets/css/main.css',
+    'element-plus/dist/index.css'
   ],
   vite: {
     plugins: [svgLoader()]
@@ -32,6 +33,12 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-lodash'
   ],
+  elementPlus: {
+    importStyle: false,
+  },
+  tailwindcss: {
+    injectPosition: 'first'
+  },
   googleFonts: {
     families: {
       Inter: [400, 500, 600, 700, 800],
