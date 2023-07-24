@@ -19,8 +19,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      Inter: ['Inter', 'ui-serif'],
-      Tektur: ['Tektur', 'ui-serif'],
+      Inter: ['Inter', 'ui-sans-serif'],
+      Tektur: ['Tektur', 'ui-monospace'],
     },
 
     extend: {
