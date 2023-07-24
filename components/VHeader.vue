@@ -27,6 +27,7 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
           :active-icon="MoonIcon"
           size="large"
           inline-prompt
+          :aria-label="$t('a11y.buttons.switch-theme')"
         />
       </ClientOnly>
 
@@ -34,6 +35,7 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
         <el-button
           link
           class="el-plus btn link purple base-font base-padding"
+          :aria-label="$t('buttons.sign-in')"
         >
           {{ $t("buttons.sign-in") }}
         </el-button>
@@ -41,6 +43,7 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
         <el-button
           :color="COLORS.PURPLE"
           class="el-plus btn base-font base-padding"
+          :aria-label="$t('buttons.sign-up')"
         >
           {{ $t("buttons.sign-up") }}
         </el-button>

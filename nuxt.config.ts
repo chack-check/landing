@@ -31,7 +31,9 @@ export default defineNuxtConfig({
     'nuxt-icons',
     '@nuxt/content',
     'nuxt-swiper',
-    'nuxt-lodash'
+    'nuxt-lodash',
+    '@unlighthouse/nuxt',
+    '@formkit/nuxt'
   ],
   elementPlus: {
     importStyle: false,

@@ -60,6 +60,7 @@ const controlledSwiperGuides = ref()
           :color="COLORS.GRAY_500"
           tag="a"
           size="large"
+          :aria-label="$t('a11y.buttons.learn-more')"
         >
           {{ $t("buttons.learn-more") }}
         </el-button>
@@ -97,11 +98,13 @@ const controlledSwiperGuides = ref()
           <template #container-start>
             <div class="flex justify-end mb-2">
               <el-button
+                :aria-label="$t('a11y.buttons.feature-prev')"
                 :icon="ArrowLeftBold"
                 :color="COLORS.PURPLE"
                 @click="controlledSwiperFeatures?.slidePrev()"
               />
               <el-button
+                :aria-label="$t('a11y.buttons.feature-next')"
                 :icon="ArrowRightBold"
                 :color="COLORS.PURPLE"
                 @click="controlledSwiperFeatures?.slideNext()"
@@ -155,11 +158,13 @@ const controlledSwiperGuides = ref()
           <template #container-start>
             <div class="flex justify-end mb-2">
               <el-button
+                :aria-label="$t('a11y.buttons.guide-prev')"
                 :icon="ArrowLeftBold"
                 :color="COLORS.PURPLE"
                 @click="controlledSwiperGuides?.slidePrev()"
               />
               <el-button
+                :aria-label="$t('a11y.buttons.guide-next')"
                 :icon="ArrowRightBold"
                 :color="COLORS.PURPLE"
                 @click="controlledSwiperGuides?.slideNext()"

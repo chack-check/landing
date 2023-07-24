@@ -8,7 +8,14 @@
     "sign-up": "Sign-up",
     "learn-more": "Learn more",
     "accept": "Accept",
-    "decline": "Decline"
+    "decline": "Decline",
+    "subscribe": "Subscribe"
+  },
+
+  "forms": {
+    "placeholder": {
+      "email": "Your best email..."
+    }
   },
 
   "cookie-modal": {
@@ -19,5 +26,16 @@
   "footer": {
     "title": "Stay in the loop",
     "subtitle": "Join our mailing list and watch for updates."
+  },
+
+  "a11y": {
+    "buttons": {
+      "learn-more": "Scroll down the page to the benefits block",
+      "feature-next": "The next slide of benefits",
+      "feature-prev": "Previous Benefits Slide",
+      "guide-next": "Next slide of the application slide deck",
+      "guide-prev": "Previous slide of the application guide",
+      "switch-theme": "Change the color theme of the site"
+    }
   }
 }
