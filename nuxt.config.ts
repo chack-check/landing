@@ -33,7 +33,8 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-lodash',
     '@unlighthouse/nuxt',
-    '@formkit/nuxt'
+    '@formkit/nuxt',
+    '@nuxtjs/apollo'
   ],
   elementPlus: {
     importStyle: false,
