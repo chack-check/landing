@@ -34,7 +34,7 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@unlighthouse/nuxt',
     '@formkit/nuxt',
-    '@nuxtjs/apollo'
+    // '@nuxtjs/apollo'
   ],
   elementPlus: {
     importStyle: false,
@@ -45,7 +45,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Inter: [400, 500, 600, 700, 800],
-      'Architects+Daughter': [400]
+      Tektur: [400]
     },
     display: 'swap',
     preload: true,

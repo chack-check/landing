@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
@@ -7,6 +7,12 @@ const head = useLocaleHead({
 })
 
 const title = computed(() => t('layouts.title'))
+
+const config = inject<{ locale: string }>(Symbol.for('FormKitConfig'))!
+
+watch(locale, v => {
+  config.locale = v
+}, { immediate: true })
 </script>
 
 <template>

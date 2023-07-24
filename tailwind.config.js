@@ -20,7 +20,7 @@ module.exports = {
   theme: {
     fontFamily: {
       Inter: ['Inter', 'ui-serif'],
-      AD: ['Architects Daughter', 'ui-serif'],
+      Tektur: ['Tektur', 'ui-serif'],
     },
 
     extend: {
@@ -35,9 +35,12 @@ module.exports = {
         darkGray800: 'lab(16 -1 -10)',
         violet: 'lab(47 38 -82)',
         violet800: 'lab(90 5 -14)',
+        violet600: 'lab(63 22 -58)',
         white: 'lab(100 -0 0)',
         lightGreen: 'lab(93 -21 11)',
-        green: 'lab(60 -42 20)'
+        green: 'lab(60 -42 20)',
+        darkBlue: 'lab(38 33 -70)',
+        error: 'lab(73 41 19)',
       },
       padding: {
         'header-b-size-desktop': '88px',

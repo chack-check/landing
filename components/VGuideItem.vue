@@ -13,7 +13,7 @@ const props = defineProps<Props>()
 <template>
   <article class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-16">
     <section class="text-start">
-      <h3 class="text-violet text-16 sm:text-20 font-AD mb-2 transition">
+      <h3 class="text-violet text-16 sm:text-20 font-Tektur mb-2 transition">
         {{ props.top_title }}
       </h3>
 

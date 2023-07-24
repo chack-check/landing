@@ -35,7 +35,8 @@
       "feature-prev": "Previous Benefits Slide",
       "guide-next": "Next slide of the application slide deck",
       "guide-prev": "Previous slide of the application guide",
-      "switch-theme": "Change the color theme of the site"
+      "switch-theme": "Change the color theme of the site",
+      "email": "Subscribe to news"
     }
   }
 }
