@@ -38,5 +38,9 @@
       "switch-theme": "Change the color theme of the site",
       "email": "Subscribe to news"
     }
+  },
+
+  "tooltips": {
+    "add-feature": "You can add your idea to improve the app!"
   }
 }

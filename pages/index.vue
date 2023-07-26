@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
+import { ArrowLeftBold, ArrowRightBold, Plus } from '@element-plus/icons-vue'
 import { breakpointsTailwind } from '@vueuse/core'
 
 const { locale } = useI18n()
@@ -76,52 +76,61 @@ const controlledSwiperGuides = ref()
           {{ content?.features_screen?.title }}
         </h3>
 
-        <div
-          v-show="greaterOrEqualSm"
-          class="grid grid-cols-3 max-w-screen-lg gap-16"
-        >
-          <v-feature-card
-            v-for="feature of content?.features_screen?.list"
-            :key="feature.id"
-            v-bind="feature"
-          />
-        </div>
-
-        <Swiper
-          v-show="!greaterOrEqualSm"
-          :modules="[SwiperController]"
-          class="max-w-screen-sm w-full"
-          :slides-per-view="1"
-          :loop="true"
-          @swiper="swiper => controlledSwiperFeatures = swiper"
-        >
-          <template #container-start>
-            <div class="flex justify-end mb-2">
-              <el-button
-                :aria-label="$t('a11y.buttons.feature-prev')"
-                :icon="ArrowLeftBold"
-                :color="COLORS.PURPLE"
-                @click="controlledSwiperFeatures?.slidePrev()"
-              />
-              <el-button
-                :aria-label="$t('a11y.buttons.feature-next')"
-                :icon="ArrowRightBold"
-                :color="COLORS.PURPLE"
-                @click="controlledSwiperFeatures?.slideNext()"
-              />
-            </div>
-          </template>
-
-          <SwiperSlide
-            v-for="feature of content?.features_screen?.list"
-            :key="feature.id"
+        <div class="mb-8 max-w-screen-sm sm:max-w-screen-lg w-full">
+          <div
+            v-show="greaterOrEqualSm"
+            class="grid grid-cols-3 max-w-screen-lg gap-16"
           >
             <v-feature-card
-              class="select-none"
+              v-for="feature of content?.features_screen?.list"
+              :key="feature.id"
               v-bind="feature"
             />
-          </SwiperSlide>
-        </Swiper>
+          </div>
+
+          <Swiper
+            v-show="!greaterOrEqualSm"
+            :modules="[SwiperController]"
+            class="w-full"
+            :slides-per-view="1"
+            :loop="true"
+            @swiper="swiper => controlledSwiperFeatures = swiper"
+          >
+            <template #container-start>
+              <div class="flex justify-end mb-2">
+                <el-button
+                  :aria-label="$t('a11y.buttons.feature-prev')"
+                  :icon="ArrowLeftBold"
+                  :color="COLORS.PURPLE"
+                  @click="controlledSwiperFeatures?.slidePrev()"
+                />
+                <el-button
+                  :aria-label="$t('a11y.buttons.feature-next')"
+                  :icon="ArrowRightBold"
+                  :color="COLORS.PURPLE"
+                  @click="controlledSwiperFeatures?.slideNext()"
+                />
+              </div>
+            </template>
+
+            <SwiperSlide
+              v-for="feature of content?.features_screen?.list"
+              :key="feature.id"
+            >
+              <v-feature-card
+                class="select-none"
+                v-bind="feature"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
+        <el-tooltip
+          :content="$t('tooltips.add-feature')"
+          placement="top"
+        >
+          <el-button circle :icon="Plus" :color="COLORS.PURPLE" class="el-plus btn base-font lg-size !h-auto" />
+        </el-tooltip>
       </section>
 
       <el-divider class="el-plus page-divider" />

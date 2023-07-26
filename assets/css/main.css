@@ -54,10 +54,18 @@
     }
 
     &.base-font {
-      --el-font-size-base: 14px;
+      --f-size-base: 14px;
+      --f-size-desktop: 16px;
+
+      --el-font-size-base: var(--f-size-base);
 
       @media (width >= 640px) {
-        --el-font-size-base: 16px;
+        --el-font-size-base: var(--f-size-desktop);
+      }
+
+      &.lg-size {
+        --f-size-base: 18px;
+        --f-size-desktop: 24px;
       }
     }
 
