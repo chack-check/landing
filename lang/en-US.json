@@ -13,6 +13,9 @@
   },
 
   "forms": {
+    "titles": {
+      "send-idea": "Suggest your idea and we will definitely consider it!"
+    },
     "placeholder": {
       "email": "Your best email",
       "text": "Write text here..."

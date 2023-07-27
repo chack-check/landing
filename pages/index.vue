@@ -28,7 +28,7 @@ const controlledSwiperGuides = ref()
   <main class="main h-full min-h-screen pt-header-b-size-mobile sm:header-b-size-desktop px-4">
     <div class="max-w-screen-lg mx-auto">
       <div class="pt-24 mx-auto flex flex-col items-center">
-        <section class="flex flex-row items-center flex-wrap justify-center mb-4">
+        <section class="flex flex-col-reverse sm:flex-row items-center flex-wrap justify-center mb-0">
           <h1
             class="
             text-32
@@ -37,7 +37,7 @@ const controlledSwiperGuides = ref()
             text-black
             dark:text-gray
             transition
-            mr-3.5
+            sm:mr-3.5
             text-center
           "
           >
@@ -47,7 +47,7 @@ const controlledSwiperGuides = ref()
           <nuxt-icon
             name="logo"
             filled
-            class="mg-0 icon lg"
+            class="mg-0 mb-4 sm:mb-0 logo"
           />
         </section>
 
@@ -72,7 +72,7 @@ const controlledSwiperGuides = ref()
       <section class="flex flex-col items-center">
         <h3
           id="features"
-          class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5"
+          class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5 sm:mb-12"
         >
           {{ content?.features_screen?.title }}
         </h3>
@@ -149,7 +149,7 @@ const controlledSwiperGuides = ref()
           </h4>
         </article>
 
-        <h3 class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5">
+        <h3 class="text-center text-20 sm:text-42 max-w-screen-md text-black dark:text-gray transition font-extrabold mb-5 sm:mb-12">
           {{ content?.guide_screen?.title }}
         </h3>
 
@@ -201,7 +201,7 @@ const controlledSwiperGuides = ref()
     </div>
 
     <client-only>
-      <el-dialog v-model="sendIdeaDialog" append-to-body>
+      <el-dialog v-model="sendIdeaDialog" append-to-body modal-class="el-plus modal" align-center>
         <FormSendIdea />
       </el-dialog>
 
@@ -216,5 +216,15 @@ const controlledSwiperGuides = ref()
   background-repeat: no-repeat;
   background-size: 15%, 15%, 70%;
   background-position: left top, right top, center top;
+}
+
+:deep(.logo.nuxt-icon svg) {
+  inline-size: 48px;
+  block-size: 48px;
+
+  @media (width >= 640px) {
+    inline-size: 50px;
+    block-size: 50px;
+  }
 }
 </style>
