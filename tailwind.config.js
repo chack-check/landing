@@ -24,6 +24,10 @@ module.exports = {
     },
 
     extend: {
+      content: {
+        mailDarkIcon: 'url("/assets/icons/mail-dark.svg")',
+        mailLightIcon: 'url("/assets/icons/mail-light.svg")',
+      },
       colors: {
         black: 'lab(8 -1 -2)',
         black600: 'lab(8 -1 -2 / .6)',
@@ -31,8 +35,13 @@ module.exports = {
         gray800: 'lab(13 -0 0)',
         gray700: 'lab(68 -3 -7)',
         'gray700-600': 'lab(68 -3 -7 / .6)',
+        gray600: 'lab(85 -1 -3)',
+        gray400: 'lab(67 -1 -7)',
+        gray300: 'lab(98 -0 -1)',
         darkGray: 'lab(16 -1 -3)',
         darkGray800: 'lab(16 -1 -10)',
+        darkGray600: 'lab(36 -1 -10)',
+        darkGray400: 'lab(48 -0 -9)',
         violet: 'lab(47 38 -82)',
         violet800: 'lab(90 5 -14)',
         violet600: 'lab(63 22 -58)',
@@ -40,6 +49,8 @@ module.exports = {
         lightGreen: 'lab(93 -21 11)',
         green: 'lab(60 -42 20)',
         darkBlue: 'lab(38 33 -70)',
+        primaryBlue800: 'lab(40 23 -75)',
+        primaryBlue600: 'lab(45 22 -79)',
         error: 'lab(73 41 19)',
       },
       padding: {

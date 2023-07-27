@@ -15,9 +15,10 @@ const { data: content } = await useAsyncData(
     .findOne()
 )
 
+const [sendIdeaDialog, toggleSendIdeaDialog] = useToggle(false)
 const breakpoints = useBreakpoints(breakpointsTailwind)
-
 const greaterOrEqualSm = breakpoints.greaterOrEqual('sm')
+const greaterOrEqualXl = breakpoints.greaterOrEqual('xl')
 
 const controlledSwiperFeatures = ref()
 const controlledSwiperGuides = ref()
@@ -129,8 +130,14 @@ const controlledSwiperGuides = ref()
           :content="$t('tooltips.add-feature')"
           placement="top"
         >
-          <el-button circle :icon="Plus" :color="COLORS.PURPLE" class="el-plus btn base-font lg-size !h-auto" />
+          <el-button circle :icon="Plus" :color="COLORS.PURPLE" class="el-plus btn base-font lg-size !h-auto mb-4 xl:mb-0" @click="toggleSendIdeaDialog(true)" />
         </el-tooltip>
+
+        <article v-show="!greaterOrEqualXl" role="tooltip" class="bg-violet rounded-full font-semibold text-12 sm:text-14">
+          <h4 class="text-white text-center px-3 py-1">
+            {{ $t('tooltips.add-feature') }}
+          </h4>
+        </article>
       </section>
 
       <el-divider class="el-plus page-divider" />
@@ -194,6 +201,10 @@ const controlledSwiperGuides = ref()
     </div>
 
     <client-only>
+      <el-dialog v-model="sendIdeaDialog" append-to-body>
+        <FormSendIdea />
+      </el-dialog>
+
       <v-cookie-modal />
     </client-only>
   </main>

@@ -12,5 +12,8 @@ export const COLORS = {
   RED: '#E02424',
 
   DARK_GREEN: '#046C4E',
-  GREEN: '#057A55'
+  GREEN: '#057A55',
+
+  PRIMARY_BLUE: '#1C64F2',
+  DARK_BLUE: '#1A56DB'
 } as const

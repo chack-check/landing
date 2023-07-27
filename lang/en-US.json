@@ -14,7 +14,12 @@
 
   "forms": {
     "placeholder": {
-      "email": "Your best email..."
+      "email": "Your best email",
+      "text": "Write text here..."
+    },
+    "labels": {
+      "email": "Your email",
+      "idea": "Your idea"
     }
   },
 

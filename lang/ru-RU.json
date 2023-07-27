@@ -14,7 +14,12 @@
 
   "forms": {
     "placeholder": {
-      "email": "Ваш лучший email..."
+      "email": "Ваш лучший email",
+      "text": "Напишите здесь что-нибудь..."
+    },
+    "labels": {
+      "email": "Ваш email",
+      "idea": "Ваша идея"
     }
   },
 

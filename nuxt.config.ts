@@ -6,8 +6,9 @@ const BASE_URL = process.env.NUXT_BASE_URL
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
+    'element-plus/dist/index.css',
     'assets/css/main.css',
-    'element-plus/dist/index.css'
+    'assets/css/formkit.css',
   ],
   vite: {
     plugins: [svgLoader()]

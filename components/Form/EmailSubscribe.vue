@@ -1,10 +1,16 @@
 <script setup lang="ts">
+const onSubmit = () => {
+  alert('Request');
+}
 </script>
 
 <template>
   <FormKit
     type="form"
     :actions="false"
+    :config="{ validationVisibility: 'submit' }"
+    :incomplete-message="false"
+    @submit="onSubmit"
   >
     <div class="form gap-4 items-stretch">
       <FormKit
@@ -13,7 +19,7 @@
         inner-class="h-full"
         wrapper-class="h-full"
         messages-class="static sm:absolute mt-2 text-error sm:max-w-[300px]"
-        validation="email"
+        validation="email|required"
         name="email"
         :placeholder="$t('forms.placeholder.email')"
       />
@@ -22,6 +28,7 @@
         class="!h-auto !text-violet !px-8 el-plus btn base-font !py-3"
         :color="COLORS.WHITE"
         :aria-label="$t('a11y.buttons.email')"
+        native-type="submit"
       >
         {{ $t("buttons.subscribe") }}
       </el-button>
