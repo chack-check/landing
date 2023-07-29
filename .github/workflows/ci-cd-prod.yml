@@ -46,8 +46,8 @@ jobs:
         with:
           namespace: landing
           manifests: |
-            kubernetes/stage/app/deployment.yml
-            kubernetes/stage/app/service.yml
-            kubernetes/stage/app/ingress.yml
+            kubernetes/deployment.yml
+            kubernetes/service.yml
+            kubernetes/ingress.yml
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/chack-landing:${{ github.sha }}
