@@ -1,29 +1,13 @@
-ARG NODE_VERSION=20.4.0
-
-FROM node:${NODE_VERSION}-slim as base
-
-ARG PORT=3000
-
-ENV NODE_ENV=production
+FROM node:20-alpine
 
 WORKDIR /src
 
-# Build
-FROM base as build
+COPY ./package*.json /src/
 
-COPY --link package.json package-lock.json ./
-RUN npm install
+RUN npm ci && npm cache clean --force
 
-COPY --link . .
+COPY . .
 
 RUN npm run build
-RUN npm prune
-
-# Run
-FROM base
-
-ENV PORT=$PORT
-
-COPY --from=build /src/.output /src/.output
 
 ENTRYPOINT [ "node", ".output/server/index.mjs" ]
