@@ -1,13 +1,29 @@
-FROM node:20.5.0-bullseye-slim
+ARG NODE_VERSION=20.4.0
+
+FROM node:${NODE_VERSION}-slim as base
+
+ARG PORT=3000
+
+ENV NODE_ENV=production
 
 WORKDIR /src
 
-COPY package*.json /src/
+# Build
+FROM base as build
 
-RUN npm ci --omit=dev
+COPY --link package.json package-lock.json ./
+RUN npm ci
 
-COPY . /src/
+COPY --link . .
 
 RUN npm run build
+RUN npm prune
+
+# Run
+FROM base
+
+ENV PORT=$PORT
+
+COPY --from=build /src/.output /src/.output
 
 ENTRYPOINT [ "node", ".output/server/index.mjs" ]
