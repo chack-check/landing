@@ -42,6 +42,7 @@ module.exports = {
         darkGray800: 'lab(16 -1 -10)',
         darkGray600: 'lab(36 -1 -10)',
         darkGray400: 'lab(48 -0 -9)',
+        darkGray200: 'lab(27 -1 -11)',
         violet: 'lab(47 38 -82)',
         violet800: 'lab(90 5 -14)',
         violet600: 'lab(63 22 -58)',

@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { MoreFilled } from '@element-plus/icons-vue'
 import MoonIcon from 'assets/icons/moon.svg?component'
 import SunIcon from 'assets/icons/sun.svg?component'
+
 
 const isDark = useDark({
   // @ts-ignore
@@ -14,10 +16,10 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
 </script>
 
 <template>
-  <header class="header w-full fixed top-0 left-0 z-[100]">
+  <header class="header w-full fixed top-0 left-0 z-[100] px-2 transition" :class="{'separate': headerBackdropBlur}">
     <div
-      class="flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition"
-      :class="{'backdrop-blur-sm': headerBackdropBlur}"
+      class="wrapper flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition rounded-b-lg"
+      :class="{'separate': headerBackdropBlur}"
     >
       <ClientOnly>
         <el-switch
@@ -52,8 +54,18 @@ const headerBackdropBlur = computed(() => y.value > height.value / 6)
   </header>
 </template>
 
-<style>
+<style lang="postcss">
 .header {
   block-size: var(--h-header);
+}
+
+.wrapper {
+  &.separate {
+    @apply
+      bg-darkGray800
+      dark:bg-darkGray200
+      drop-shadow-lg
+      transition;
+  }
 }
 </style>
