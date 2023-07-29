@@ -6,6 +6,10 @@ metadata:
     app: chack-landing
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+      - chack-check.ru
+    secretName: chack-check-tls
   rules:
   - host: chack-check.ru
     http:
