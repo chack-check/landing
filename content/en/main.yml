@@ -1,0 +1,64 @@
+main_screen:
+  description: Discover a new dimension of communication with our app that embodies advanced features and a smart AI assistant. Make your conversations more efficient and productive with advanced features that turn ordinary chat into a unique experience.
+
+features_screen:
+  title: Our benefits cover the capabilities of several applications at once
+  list:
+    - id: 1
+      icon: content/features/tie
+      title: Organization mode
+      description: The mode provides convenient management of the chat system designed for employee communications.
+    - id: 2
+      icon: content/features/phone
+      title: Group calls
+      description: Call whoever you want and whenever you want, the number of participants up to 500 people.
+    - id: 3
+      icon: content/features/chield
+      title: Encryption
+      description: End-to-end encryption allows your chats to be more secure and less worried about protecting corporate information.
+    - id: 4
+      icon: content/features/ai
+      title: AI Helper
+      description: Your smart assistant will tell you how to use the app and suggest improvements to your chat system.
+    - id: 5
+      icon: content/features/api
+      title: Open integration API
+      description: Integrate our chat and messaging system with your Telegram bot or app.
+    - id: 6
+      icon: content/features/chat
+      title: Task Management
+      description: Manage, track, group and create tasks, as well as control the time to complete them.
+
+guide_screen:
+  title: Using work chat has never been so convenient!
+  badge: Use what's right for you
+  list:
+    - id: 1
+      top_title: More options. Less movement
+      title: Create your environment in a few clicks
+      description: You can organize your chats in seconds, take advantage of all the features of our app to make your life easier.
+      sublist:
+        - id: 1
+          title: Creating chats
+        - id: 2
+          title: Creating tasks
+        - id: 3
+          title: Organization mode
+    - id: 2
+      top_title: Smarter. More active. Better
+      title: Get smarter with AI
+      description: Your AI friend will tell you how to better organize your chat grid and help you understand the application if you don't understand how to use it.
+      sublist:
+        - id: 1
+          title: AI will help with in-app navigation
+        - id: 2
+          title: AI will help organize your chats
+    - id: 3
+      top_title: Create. Design. Integrate.
+      title: Use our open API
+      description: Use a public key to create your own app or Telegram bot to track or reply to messages. You can also create your own app based on our.
+      sublist:
+        - id: 1
+          title: Creating Bots
+        - id: 2
+          title: Creating integrations

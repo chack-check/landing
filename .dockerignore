@@ -1,0 +1,6 @@
+LICENSE
+README.MD
+.github/
+.git/
+kubernetes/
+node_modules/

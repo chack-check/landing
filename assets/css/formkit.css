@@ -1,0 +1,64 @@
+.formkit-theme {
+  textarea {
+    resize: none;
+  }
+
+  &.input {
+    .formkit-wrapper {
+      .formkit-label {
+        @apply
+          text-black
+          dark:text-white
+          inline-block
+          mb-2
+          text-14
+          sm:text-16;
+      }
+    }
+
+    .formkit-inner {
+      input, textarea {
+        @apply
+          w-full
+          bg-gray300
+          dark:bg-darkGray600
+          rounded-lg
+          border
+          border-solid
+          border-gray600
+          dark:border-darkGray400
+          py-3
+          px-4
+          text-darkGray400
+          dark:text-gray600
+          text-14
+          sm:text-16;
+      }
+    }
+
+    &.with-icon {
+      .formkit-inner {
+        @apply relative;
+
+        &:before {
+          @apply ml-4 content-mailLightIcon dark:content-mailDarkIcon;
+
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          inline-size: 18px;
+          block-size: 18px;
+
+          @media (width >= 640px) {
+            inline-size: 20px;
+            block-size: 20px;
+          }
+        }
+
+        input, textarea {
+          @apply pl-11;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import svgLoader from 'vite-svg-loader'
 
 const BASE_URL = process.env.NUXT_BASE_URL
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: [
+    'assets/css/fonts.css',
+    'assets/css/main.css',
+    'element-plus/dist/index.css',
+    'assets/css/formkit.css',
+  ],
+  vite: {
+    plugins: [svgLoader()]
+  },
   app: {
     head: {
       link: [
@@ -15,24 +25,44 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/i18n',
-    '@nuxtjs/google-fonts',
     'nuxt-icons',
     '@nuxtjs/tailwindcss',
     '@element-plus/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    'nuxt-icons',
+    '@nuxt/content',
+    'nuxt-swiper',
+    'nuxt-lodash',
+    '@unlighthouse/nuxt',
+    '@formkit/nuxt',
+    'nuxt-gtag',
+    '@nuxtjs/fontaine',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots'
+    // '@nuxtjs/apollo'
   ],
-  googleFonts: {
-    families: {
-      Inter: true
-    },
-    display: 'swap',
-    preload: true,
-    download: true
+  gtag: {
+    loadingStrategy: 'async',
+    initialConsent: false,
+  },
+  elementPlus: {
+    importStyle: false,
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    injectPosition: 'first'
   },
   postcss: {
     plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': 'postcss-nesting',
       tailwindcss: {},
-      autoprefixer: {}
+      'postcss-preset-env': {
+        features: { 'nesting-rules': false }
+      },
+      'postcss-pxtorem': {
+        propList: ['font', 'font-size', 'line-height', 'letter-spacing', 'inline-size', 'block-size']
+      }
     }
   },
   i18n: {
@@ -58,5 +88,10 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_language',
       alwaysRedirect: true
     }
+  },
+  imports: {
+    dirs: [
+      'utils/**'
+    ]
   }
 })

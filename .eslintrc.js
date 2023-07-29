@@ -12,7 +12,8 @@ module.exports = {
     'vue'
   ],
   rules: {
-    'vue/multi-word-component-names': ['off']
+    'vue/multi-word-component-names': ['off'],
+    'vue/prop-name-casing': ['error', 'camelCase' | 'snake_case']
   },
   parserOptions: {
     project: './tsconfig.json'

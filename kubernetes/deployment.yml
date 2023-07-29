@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chack-landing
+  labels:
+    app: chack-landing
+    name: chack-landing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chack-landing
+  template:
+    metadata:
+      labels:
+        app: chack-landing
+    spec:
+      containers:
+        - name: chack-landing
+          image: artemowkin/chack-landing:latest
+          ports:
+            - containerPort: 3000
