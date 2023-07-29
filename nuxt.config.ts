@@ -6,8 +6,9 @@ const BASE_URL = process.env.NUXT_BASE_URL
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
-    'element-plus/dist/index.css',
+    'assets/css/fonts.css',
     'assets/css/main.css',
+    'element-plus/dist/index.css',
     'assets/css/formkit.css',
   ],
   vite: {
@@ -24,7 +25,6 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/i18n',
-    '@nuxtjs/google-fonts',
     'nuxt-icons',
     '@nuxtjs/tailwindcss',
     '@element-plus/nuxt',
@@ -35,22 +35,22 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@unlighthouse/nuxt',
     '@formkit/nuxt',
+    'nuxt-gtag',
+    '@nuxtjs/fontaine',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots'
     // '@nuxtjs/apollo'
   ],
+  gtag: {
+    loadingStrategy: 'async',
+    initialConsent: false,
+  },
   elementPlus: {
     importStyle: false,
   },
   tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
     injectPosition: 'first'
-  },
-  googleFonts: {
-    families: {
-      Inter: [400, 500, 600, 700, 800],
-      Tektur: [400]
-    },
-    display: 'swap',
-    preload: true,
-    download: true
   },
   postcss: {
     plugins: {

@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const cookieNotification = useLocalStorage('app.cookie_notification', true)
+
+const onClose = (consent: boolean) => {
+  useGtagConsent(consent);
+
+  cookieNotification.value = false;
+}
 </script>
 
 <template>
@@ -27,12 +33,12 @@ const cookieNotification = useLocalStorage('app.cookie_notification', true)
       <div>
         <el-button
           :color="COLORS.GREEN"
-          @click="cookieNotification = false"
+          @click="onClose(true)"
         >
           {{ $t("buttons.accept") }}
         </el-button>
 
-        <el-button :color="COLORS.RED">
+        <el-button :color="COLORS.RED" @click="onClose(false)">
           {{ $t("buttons.decline") }}
         </el-button>
       </div>

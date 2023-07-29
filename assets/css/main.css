@@ -156,10 +156,6 @@ html {
   }
 }
 
-* {
-  font-family: Inter;
-}
-
 .position-center {
   @apply left-1/2 transform -translate-x-1/2;
 }
