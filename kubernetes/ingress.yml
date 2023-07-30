@@ -4,12 +4,14 @@ metadata:
   name: chack-landing-ingress
   labels:
     app: chack-landing
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
       - chack-check.ru
-    secretName: chack-check-tls
+    secretName: letsencrypt
   rules:
   - host: chack-check.ru
     http:
