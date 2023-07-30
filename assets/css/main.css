@@ -156,6 +156,15 @@ html {
   }
 }
 
+.min-bs-screen {
+  block-size: 100%;
+  min-block-size: 100vh;
+
+  @supports (min-block-size: 100dvh) {
+    min-block-size: 100dvh;
+  }
+}
+
 .position-center {
   @apply left-1/2 transform -translate-x-1/2;
 }

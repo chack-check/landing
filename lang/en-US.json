@@ -9,7 +9,8 @@
     "learn-more": "Learn more",
     "accept": "Accept",
     "decline": "Decline",
-    "subscribe": "Subscribe"
+    "subscribe": "Subscribe",
+    "go-to-back": "Go to Back"
   },
 
   "forms": {
@@ -50,5 +51,9 @@
 
   "tooltips": {
     "add-feature": "You can add your idea to improve the app!"
+  },
+
+  "404": {
+    "description": "We don't know how you got here ._."
   }
 }

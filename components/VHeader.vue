@@ -12,14 +12,14 @@ const isDark = useDark({
 const { y } = useWindowScroll()
 const { height } = useWindowSize()
 
-const headerBackdropBlur = computed(() => y.value > height.value / 6)
+const headerSeparate = computed(() => y.value > height.value / 6)
 </script>
 
 <template>
-  <header class="header w-full fixed top-0 left-0 z-[100] px-2 transition" :class="{'separate': headerBackdropBlur}">
+  <header class="header w-full sticky top-0 left-0 z-[100] px-2 transition">
     <div
-      class="wrapper flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition rounded-b-lg"
-      :class="{'separate': headerBackdropBlur}"
+      class="bg-transparent wrapper flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition rounded-b-lg"
+      :class="{'separate': headerSeparate}"
     >
       <ClientOnly>
         <el-switch

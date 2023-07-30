@@ -25,7 +25,7 @@ const controlledSwiperGuides = ref()
 </script>
 
 <template>
-  <main class="main h-full min-h-screen pt-header-b-size-mobile sm:header-b-size-desktop px-4">
+  <main class="main px-4">
     <div class="max-w-screen-lg mx-auto">
       <div class="pt-24 mx-auto flex flex-col items-center">
         <section class="flex flex-col-reverse sm:flex-row items-center flex-wrap justify-center mb-0">
@@ -211,13 +211,6 @@ const controlledSwiperGuides = ref()
 </template>
 
 <style scoped>
-.main {
-  background-image: url('assets/images/wave-left.svg'), url('assets/images/wave-right.svg'), url('assets/images/wave-top.svg');
-  background-repeat: no-repeat;
-  background-size: 15%, 15%, 70%;
-  background-position: left top, right top, center top;
-}
-
 :deep(.logo.nuxt-icon svg) {
   inline-size: 48px;
   block-size: 48px;

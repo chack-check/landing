@@ -45,7 +45,7 @@ watch(locale, v => {
           />
         </template>
       </Head>
-      <Body class="bg-gray dark:bg-black transition">
+      <Body class="body min-bs-screen bg-gray dark:bg-black transition">
         <VHeader />
         <slot />
 
@@ -54,3 +54,12 @@ watch(locale, v => {
     </Html>
   </div>
 </template>
+
+<style lang="postcss">
+.body {
+  background-image: url('assets/images/wave-left.svg'), url('assets/images/wave-right.svg'), url('assets/images/wave-top.svg');
+  background-repeat: no-repeat;
+  background-size: 15%, 15%, 70%;
+  background-position: left top, right top, center top;
+}
+</style>

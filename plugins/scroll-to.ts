@@ -20,9 +20,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         return
       }
 
-      const yCoord = globalThis.scrollY + target.getBoundingClientRect()?.top
-
       el.addEventListener('click', () => {
+        const yCoord = globalThis.scrollY + target.getBoundingClientRect()?.top
+
         globalThis.scrollTo({ top: yCoord - offset, behavior: 'smooth' })
       })
     },
