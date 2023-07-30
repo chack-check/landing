@@ -1,10 +1,12 @@
-FROM node
+FROM node:20-alpine
 
 WORKDIR /src
 
-COPY . /src/
+COPY ./package*.json /src/
 
-RUN npm install
+RUN npm ci && npm cache clean --force
+
+COPY . .
 
 RUN npm run build
 
