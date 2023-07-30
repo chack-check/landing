@@ -20,7 +20,6 @@ jobs:
       - name: Build and push the docker image
         uses: docker/build-push-action@v3
         with:
-          context: .
           build-args: |
             "GTAG_ID=${{ secrets.GTAG_ID }}"
           push: true
