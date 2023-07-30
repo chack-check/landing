@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from 'vite-svg-loader'
 
-console.log(process.env.NUXT_PUBLIC_GTAG_ID);
-
+const GTAG = process.env.NUXT_PUBLIC_GTAG_ID
 const BASE_URL = process.env.NUXT_BASE_URL
 
 export default defineNuxtConfig({
@@ -44,6 +43,7 @@ export default defineNuxtConfig({
     // '@nuxtjs/apollo'
   ],
   gtag: {
+    id: GTAG,
     loadingStrategy: 'async',
     initialConsent: false,
   },
