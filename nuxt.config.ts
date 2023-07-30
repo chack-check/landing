@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from 'vite-svg-loader'
 
-const GTAG = process.env.NUXT_PUBLIC_GTAG_ID
+const IS_DEV = process.env.NODE_ENV === 'development';
+const GTAG = IS_DEV ? 'G-XXXXXXXX' : process.env.NUXT_PUBLIC_GTAG_ID
 const BASE_URL = process.env.NUXT_BASE_URL
 
 export default defineNuxtConfig({
@@ -87,7 +88,8 @@ export default defineNuxtConfig({
     langDir: 'lang',
     detectBrowserLanguage: {
       useCookie: false,
-      redirectOn: 'root'
+      redirectOn: 'root',
+      alwaysRedirect: true
     }
   },
   imports: {
