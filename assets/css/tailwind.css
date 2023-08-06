@@ -9,5 +9,6 @@
 
   html {
     -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
   }
 }

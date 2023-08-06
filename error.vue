@@ -1,13 +1,9 @@
 <script setup lang="ts">
-// interface Props {
-//   error: object
-// }
-
-// const props = defineProps<Props>()
-
 useDark();
 
-const handleError = () => clearError({ redirect: '/' })
+const localePath = useLocalePath()
+
+const handleError = () => clearError({ redirect: localePath('/') })
 </script>
 
 <template>

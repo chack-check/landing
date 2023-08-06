@@ -24,9 +24,7 @@
 
 html {
   div[role="tooltip"] {
-    @media (width <= 1280px) {
-      display: none;
-    }
+   z-index: 1000 !important;
   }
 
   .el-plus {
@@ -91,12 +89,24 @@ html {
     }
 
     &.modal {
+      .el-overlay-dialog {
+        @apply
+          grid
+          place-items-end
+          sm:place-items-center;
+      }
+
       .el-dialog {
         --el-dialog-bg-color: var(--c-white);
         --el-dialog-width: 100%;
         --el-dialog-border-radius: 10px;
 
         max-inline-size: var(--width-md);
+
+        @media (width <= 640px) {
+          margin: 0;
+          margin-bottom: 25px;
+        }
 
         .el-dialog__close {
           font-size: 24px;
@@ -140,6 +150,12 @@ html {
               block-size: 32px;
             }
           }
+        }
+      }
+
+      &.skiny {
+        .el-dialog__header {
+          display: none;
         }
       }
     }

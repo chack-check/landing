@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { MoreFilled } from '@element-plus/icons-vue'
 import MoonIcon from 'assets/icons/moon.svg?component'
 import SunIcon from 'assets/icons/sun.svg?component'
 
@@ -21,17 +20,21 @@ const headerSeparate = computed(() => y.value > height.value / 6)
       class="bg-transparent wrapper flex justify-between items-center max-w-screen-lg mx-auto p-3 sm:p-6 transition rounded-b-lg"
       :class="{'separate': headerSeparate}"
     >
-      <ClientOnly>
-        <el-switch
-          v-model="isDark"
-          class="el-plus theme-switcher"
-          :inactive-icon="SunIcon"
-          :active-icon="MoonIcon"
-          size="large"
-          inline-prompt
-          :aria-label="$t('a11y.buttons.switch-theme')"
-        />
-      </ClientOnly>
+      <div class="flex flex-row items-center">
+        <ClientOnly>
+          <el-switch
+            v-model="isDark"
+            class="el-plus theme-switcher mr-5"
+            :inactive-icon="SunIcon"
+            :active-icon="MoonIcon"
+            size="large"
+            inline-prompt
+            :aria-label="$t('a11y.buttons.switch-theme')"
+          />
+        </ClientOnly>
+
+        <v-locale-switcher />
+      </div>
 
       <div>
         <el-button
@@ -62,8 +65,9 @@ const headerSeparate = computed(() => y.value > height.value / 6)
 .wrapper {
   &.separate {
     @apply
-      bg-darkGray800
-      dark:bg-darkGray200
+      bg-gray700-800
+      dark:bg-darkGray800-300
+      backdrop-blur
       drop-shadow-lg
       transition;
   }

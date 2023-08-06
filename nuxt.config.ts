@@ -74,22 +74,24 @@ export default defineNuxtConfig({
       {
         code: 'en',
         iso: 'en-US',
-        file: 'en-US.json'
+        file: 'en-US.json',
+        name: 'English'
       },
       {
         code: 'ru',
         iso: 'en-RU',
-        file: 'ru-RU.json'
+        file: 'ru-RU.json',
+        name: 'Русский'
       }
     ],
-    strategy: 'prefix',
+    strategy: 'prefix_except_default',
     defaultLocale: 'ru',
     lazy: true,
     langDir: 'lang',
     detectBrowserLanguage: {
-      useCookie: false,
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
       redirectOn: 'root',
-      alwaysRedirect: true
     }
   },
   imports: {

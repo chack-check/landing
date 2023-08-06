@@ -98,7 +98,7 @@ const controlledSwiperGuides = ref()
             @swiper="swiper => controlledSwiperFeatures = swiper"
           >
             <template #container-start>
-              <div class="flex justify-end mb-2">
+              <div class="flex justify-end mb-5">
                 <el-button
                   :aria-label="$t('a11y.buttons.feature-prev')"
                   :icon="ArrowLeftBold"
@@ -129,6 +129,7 @@ const controlledSwiperGuides = ref()
         <el-tooltip
           :content="$t('tooltips.add-feature')"
           placement="top"
+          popper-class="hidden xl:block"
         >
           <el-button circle :icon="Plus" :color="COLORS.PURPLE" class="el-plus btn base-font lg-size !h-auto mb-4 xl:mb-0" @click="toggleSendIdeaDialog(true)" />
         </el-tooltip>
@@ -172,7 +173,7 @@ const controlledSwiperGuides = ref()
           @swiper="swiper => controlledSwiperGuides = swiper"
         >
           <template #container-start>
-            <div class="flex justify-end mb-2">
+            <div class="flex justify-end mb-5">
               <el-button
                 :aria-label="$t('a11y.buttons.guide-prev')"
                 :icon="ArrowLeftBold"
@@ -201,7 +202,7 @@ const controlledSwiperGuides = ref()
     </div>
 
     <client-only>
-      <el-dialog v-model="sendIdeaDialog" append-to-body modal-class="el-plus modal" align-center>
+      <el-dialog v-model="sendIdeaDialog" append-to-body modal-class="el-plus modal">
         <FormSendIdea />
       </el-dialog>
 
