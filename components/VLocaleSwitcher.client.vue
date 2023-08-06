@@ -66,7 +66,7 @@ watch(greaterOrEqualSm, (state) => {
       </ul>
     </el-popover>
 
-    <el-dialog v-model="switchDialog" append-to-body modal-class="el-plus modal skiny" >
+    <el-dialog v-model="switchDialog" append-to-body modal-class="el-plus modal skiny">
       <ul class="space-y-2 w-full">
         <li
           v-for="({ code, name }, idx) of (locales as LocaleObject[])"
