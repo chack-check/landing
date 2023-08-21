@@ -1,6 +1,7 @@
 {
   "layouts": {
-    "title": "Chack-check"
+    "title": "Chack-check",
+    "description": "Fast and smart chat manager"
   },
 
   "buttons": {
@@ -10,7 +11,8 @@
     "accept": "Accept",
     "decline": "Decline",
     "subscribe": "Subscribe",
-    "go-to-back": "Go to Back"
+    "go-to-back": "Go to Back",
+    "switch-theme": "Theme switcher"
   },
 
   "forms": {

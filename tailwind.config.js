@@ -3,6 +3,7 @@
 const { pxToRemPair: pxToRemPairHelper } = require('@captaincss/captaincss/helpers')
 
 const baseFontSize = 16
+
 const pxToRemPair = (px) => {
   return pxToRemPairHelper(px, baseFontSize)
 }
@@ -29,6 +30,7 @@ module.exports = {
         mailLightIcon: 'url("/assets/icons/mail-light.svg")',
       },
       colors: {
+        // Bullshit
         black: 'lab(8 -1 -2)',
         black600: 'lab(8 -1 -2 / .6)',
         gray: 'lab(90 -2 -5)',
@@ -57,10 +59,6 @@ module.exports = {
         primaryBlue600: 'lab(45 22 -79)',
         error: 'lab(73 41 19)',
       },
-      padding: {
-        'header-b-size-desktop': '88px',
-        'header-b-size-mobile': '64px'
-      }
     },
 
     fontSize: {

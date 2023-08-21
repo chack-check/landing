@@ -44,6 +44,11 @@ watch(locale, v => {
             :content="meta.content"
           />
         </template>
+
+        <Meta
+          name="description"
+          :content="$t('layouts.description')"
+        />
       </Head>
       <Body class="body min-bs-screen bg-gray dark:bg-black transition">
         <VHeader />

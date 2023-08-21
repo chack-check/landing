@@ -12,5 +12,6 @@ ARG GTAG_ID
 ENV NUXT_PUBLIC_GTAG_ID ${GTAG_ID}
 
 RUN npm run build
+RUN npm run generate
 
-ENTRYPOINT [ "node", ".output/server/index.mjs" ]
+ENTRYPOINT [ "npm", "run", "preview" ]

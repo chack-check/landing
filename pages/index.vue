@@ -59,7 +59,6 @@ const controlledSwiperGuides = ref()
           v-scroll="{ id: 'features', offset: 90 }"
           class="el-plus btn base-font mb-10 !px-4 sm:!px-6 !h-10 sm:!h-12"
           :color="COLORS.GRAY_500"
-          tag="a"
           size="large"
           :aria-label="$t('a11y.buttons.learn-more')"
         >
@@ -77,68 +76,77 @@ const controlledSwiperGuides = ref()
           {{ content?.features_screen?.title }}
         </h3>
 
-        <div class="mb-8 max-w-screen-sm sm:max-w-screen-lg w-full">
-          <div
-            v-show="greaterOrEqualSm"
-            class="grid grid-cols-3 max-w-screen-lg gap-16"
-          >
-            <v-feature-card
-              v-for="feature of content?.features_screen?.list"
-              :key="feature.id"
-              v-bind="feature"
-            />
-          </div>
-
-          <Swiper
-            v-show="!greaterOrEqualSm"
-            :modules="[SwiperController]"
-            class="w-full"
-            :slides-per-view="1"
-            :loop="true"
-            @swiper="swiper => controlledSwiperFeatures = swiper"
-          >
-            <template #container-start>
-              <div class="flex justify-end mb-5">
-                <el-button
-                  :aria-label="$t('a11y.buttons.feature-prev')"
-                  :icon="ArrowLeftBold"
-                  :color="COLORS.PURPLE"
-                  @click="controlledSwiperFeatures?.slidePrev()"
-                />
-                <el-button
-                  :aria-label="$t('a11y.buttons.feature-next')"
-                  :icon="ArrowRightBold"
-                  :color="COLORS.PURPLE"
-                  @click="controlledSwiperFeatures?.slideNext()"
-                />
-              </div>
-            </template>
-
-            <SwiperSlide
-              v-for="feature of content?.features_screen?.list"
-              :key="feature.id"
+        <client-only>
+          <div class="mb-8 max-w-screen-sm sm:max-w-screen-lg w-full">
+            <div
+              v-if="greaterOrEqualSm"
+              class="grid grid-cols-3 max-w-screen-lg gap-16"
             >
-              <v-feature-card
-                class="select-none"
+              <VFeatureCard
+                v-for="feature of content?.features_screen?.list"
+                :key="feature.id"
                 v-bind="feature"
               />
-            </SwiperSlide>
-          </Swiper>
-        </div>
+            </div>
 
-        <el-tooltip
-          :content="$t('tooltips.add-feature')"
-          placement="top"
-          popper-class="hidden xl:block"
-        >
-          <el-button circle :icon="Plus" :color="COLORS.PURPLE" class="el-plus btn base-font lg-size !h-auto mb-4 xl:mb-0" @click="toggleSendIdeaDialog(true)" />
-        </el-tooltip>
+            <Swiper
+              v-else
+              :modules="[SwiperController]"
+              class="w-full"
+              :slides-per-view="1"
+              :loop="true"
+              @swiper="swiper => controlledSwiperFeatures = swiper"
+            >
+              <template #container-start>
+                <div class="flex justify-end mb-5">
+                  <el-button
+                    :aria-label="$t('a11y.buttons.feature-prev')"
+                    :icon="ArrowLeftBold"
+                    :color="COLORS.PURPLE"
+                    @click="controlledSwiperFeatures?.slidePrev()"
+                  />
+                  <el-button
+                    :aria-label="$t('a11y.buttons.feature-next')"
+                    :icon="ArrowRightBold"
+                    :color="COLORS.PURPLE"
+                    @click="controlledSwiperFeatures?.slideNext()"
+                  />
+                </div>
+              </template>
 
-        <article v-show="!greaterOrEqualXl" role="tooltip" class="bg-violet rounded-full font-semibold text-12 sm:text-14">
-          <h4 class="text-white text-center px-3 py-1">
-            {{ $t('tooltips.add-feature') }}
-          </h4>
-        </article>
+              <SwiperSlide
+                v-for="feature of content?.features_screen?.list"
+                :key="feature.id"
+              >
+                <VFeatureCard
+                  class="select-none"
+                  v-bind="feature"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+          <el-tooltip
+            :content="$t('tooltips.add-feature')"
+            placement="top"
+            popper-class="hidden xl:block"
+          >
+            <el-button
+              :aria-label="$t('tooltips.add-feature')"
+              circle
+              :icon="Plus"
+              :color="COLORS.PURPLE"
+              class="el-plus btn base-font lg-size !h-auto mb-4 xl:mb-0"
+              @click="toggleSendIdeaDialog(true)"
+            />
+          </el-tooltip>
+
+          <article v-if="!greaterOrEqualXl" role="tooltip" class="bg-violet rounded-full font-semibold text-12 sm:text-14">
+            <h4 class="text-white text-center px-3 py-1">
+              {{ $t('tooltips.add-feature') }}
+            </h4>
+          </article>
+        </client-only>
       </section>
 
       <el-divider class="el-plus page-divider" />
@@ -154,48 +162,50 @@ const controlledSwiperGuides = ref()
           {{ content?.guide_screen?.title }}
         </h3>
 
-        <div v-show="greaterOrEqualSm" class="grid grid-cols-1 gap-20">
-          <v-guide-item
-            v-for="guide of content?.guide_screen.list"
-            :key="guide.id"
-            v-bind="guide"
-            :reverse="(guide.id) % 2 === 0"
-          />
-        </div>
+        <client-only>
+          <div v-if="greaterOrEqualSm" class="grid grid-cols-1 gap-20">
+            <VGuideItem
+              v-for="guide of content?.guide_screen.list"
+              :key="guide.id"
+              v-bind="guide"
+              :reverse="(guide.id) % 2 === 0"
+            />
+          </div>
 
-        <Swiper
-          v-show="!greaterOrEqualSm"
-          :modules="[SwiperController]"
-          class="max-w-screen-sm w-full"
-          auto-height
-          :slides-per-view="1"
-          :loop="true"
-          @swiper="swiper => controlledSwiperGuides = swiper"
-        >
-          <template #container-start>
-            <div class="flex justify-end mb-5">
-              <el-button
-                :aria-label="$t('a11y.buttons.guide-prev')"
-                :icon="ArrowLeftBold"
-                :color="COLORS.PURPLE"
-                @click="controlledSwiperGuides?.slidePrev()"
-              />
-              <el-button
-                :aria-label="$t('a11y.buttons.guide-next')"
-                :icon="ArrowRightBold"
-                :color="COLORS.PURPLE"
-                @click="controlledSwiperGuides?.slideNext()"
-              />
-            </div>
-          </template>
-
-          <SwiperSlide
-            v-for="guide of content?.guide_screen.list"
-            :key="guide.id"
+          <Swiper
+            v-else
+            :modules="[SwiperController]"
+            class="max-w-screen-sm w-full"
+            auto-height
+            :slides-per-view="1"
+            :loop="true"
+            @swiper="swiper => controlledSwiperGuides = swiper"
           >
-            <v-guide-item v-bind="guide" class="mx-2" />
-          </SwiperSlide>
-        </Swiper>
+            <template #container-start>
+              <div class="flex justify-end mb-5">
+                <el-button
+                  :aria-label="$t('a11y.buttons.guide-prev')"
+                  :icon="ArrowLeftBold"
+                  :color="COLORS.PURPLE"
+                  @click="controlledSwiperGuides?.slidePrev()"
+                />
+                <el-button
+                  :aria-label="$t('a11y.buttons.guide-next')"
+                  :icon="ArrowRightBold"
+                  :color="COLORS.PURPLE"
+                  @click="controlledSwiperGuides?.slideNext()"
+                />
+              </div>
+            </template>
+
+            <SwiperSlide
+              v-for="guide of content?.guide_screen.list"
+              :key="guide.id"
+            >
+              <VGuideItem v-bind="guide" class="mx-2" />
+            </SwiperSlide>
+          </Swiper>
+        </client-only>
       </section>
 
       <el-divider class="el-plus page-divider !mb-8" />
@@ -203,11 +213,11 @@ const controlledSwiperGuides = ref()
 
     <client-only>
       <el-dialog v-model="sendIdeaDialog" append-to-body modal-class="el-plus modal">
-        <FormSendIdea />
+        <LazyFormSendIdea />
       </el-dialog>
-
-      <v-cookie-modal />
     </client-only>
+
+    <LazyVCookieModal />
   </main>
 </template>
 

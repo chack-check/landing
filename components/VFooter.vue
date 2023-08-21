@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <footer class="px-4">
+  <footer class="px-4 content-visibility-auto">
     <div class="footer bg-violet grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 items-center rounded-[10px] px-8 sm:px-12 py-10 sm:py-16 max-w-screen-lg mx-auto">
       <section>
         <h2 class="text-20 sm:text-32 font-bold text-white mb-2">

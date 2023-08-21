@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-swiper',
     'nuxt-lodash',
-    '@unlighthouse/nuxt',
     '@formkit/nuxt',
     'nuxt-gtag',
     '@nuxtjs/fontaine',

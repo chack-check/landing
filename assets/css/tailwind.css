@@ -16,3 +16,11 @@
     overscroll-behavior: none;
   }
 }
+
+@layer utilities {
+  .content-visibility-auto {
+    @supports (content-visibility: auto) {
+      content-visibility: auto;
+    }
+  }
+}

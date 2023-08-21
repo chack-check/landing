@@ -3,7 +3,7 @@ import type { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables';
 import { breakpointsTailwind } from '@vueuse/core'
 
 const buttonRef = ref()
-const isDark = useDark({
+const colorMode = useColorMode({
   // @ts-ignore
   disableTransition: false
 })
@@ -36,7 +36,8 @@ watch(greaterOrEqualSm, (state) => {
     <el-popover
       v-if="greaterOrEqualSm"
       :virtual-ref="buttonRef"
-      :effect="isDark ? 'dark' : 'light'"
+      :effect="colorMode"
+      virtual-triggering
     >
       <ul class="space-y-2 w-full">
         <li
@@ -66,7 +67,7 @@ watch(greaterOrEqualSm, (state) => {
       </ul>
     </el-popover>
 
-    <el-dialog v-model="switchDialog" append-to-body modal-class="el-plus modal skiny">
+    <el-dialog v-else v-model="switchDialog" append-to-body modal-class="el-plus modal skiny">
       <ul class="space-y-2 w-full">
         <li
           v-for="({ code, name }, idx) of (locales as LocaleObject[])"
@@ -89,6 +90,7 @@ watch(greaterOrEqualSm, (state) => {
             "
             :class="[code === locale && 'bg-violet-100 text-violet']"
             :to="switchLocalePath(code)"
+            @click.prevent="toggleSwitchDialog(false)"
           >
             {{ name }}
           </NuxtLink>
@@ -97,5 +99,3 @@ watch(greaterOrEqualSm, (state) => {
     </el-dialog>
   </div>
 </template>
-
-<style lang="postcss"></style>

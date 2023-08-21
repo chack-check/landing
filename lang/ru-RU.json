@@ -1,6 +1,7 @@
 {
   "layouts": {
-    "title": "Chack-check"
+    "title": "Chack-check",
+    "description": "Быстрый и умный чат-менеджер"
   },
 
   "buttons": {
@@ -10,7 +11,8 @@
     "accept": "Принять",
     "decline": "Отклонить",
     "subscribe": "Подписаться",
-    "go-to-back": "Вернуться назад"
+    "go-to-back": "Вернуться назад",
+    "switch-theme": "Переключатель темы"
   },
 
   "forms": {
