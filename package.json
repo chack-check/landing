@@ -6,7 +6,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview --https --open",
-    "start": "node .output/server/index.mjs",
+    "start": "serve .output/public",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "@formkit/nuxt": "^0.17.5",
     "nuxt-icons": "^3.2.1",
     "nuxt-swiper": "^1.2.0",
-    "serve": "^14.2.0",
+    "serve": "^14.2.1",
     "vue3-smooth-scroll": "^0.8.1"
   }
 }

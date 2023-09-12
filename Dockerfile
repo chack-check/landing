@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20-alpine as builder
 
 WORKDIR /src
 
@@ -14,4 +14,7 @@ ENV NUXT_PUBLIC_GTAG_ID ${GTAG_ID}
 RUN npm run build
 RUN npm run generate
 
-ENTRYPOINT [ "npm", "run", "start" ]
+FROM nginx
+
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /src/public /usr/share/nginx/html/
