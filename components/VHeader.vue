@@ -42,6 +42,7 @@ const headerSeparate = computed(() => y.value > height.value / 6)
       <div>
         <client-only>
           <el-button
+            type=""
             link
             class="el-plus btn link purple base-font base-padding"
             :aria-label="$t('buttons.sign-in')"

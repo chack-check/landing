@@ -14,4 +14,4 @@ ENV NUXT_PUBLIC_GTAG_ID ${GTAG_ID}
 RUN npm run build
 RUN npm run generate
 
-ENTRYPOINT [ "npm", "run", "preview" ]
+ENTRYPOINT [ "npm", "run", "start" ]
